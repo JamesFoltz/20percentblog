@@ -6,16 +6,17 @@
   <meta content="width=device-width,initial-scale=1" name="viewport" />
   <title>20% project blog</title>
   <style>
-    #project-link:visited{
-      color:#00DDDD;
+    #project-link:visited {
+      color: #00dddd;
     }
+
     body {
       margin: 0;
       padding: 0;
       width: 100%;
       background-color: #212121;
       color: rgb(187, 168, 135);
-      font-size: large
+      font-size: large;
     }
 
     .main {
@@ -23,7 +24,7 @@
       justify-content: center;
       flex-wrap: wrap;
       flex-direction: column;
-      align-items: center
+      align-items: center;
     }
 
     .storyText {
@@ -40,7 +41,7 @@
     }
 
     .text:hover {
-      background-color: rgba(83, 83, 83, .25);
+      background-color: rgba(83, 83, 83, 0.25);
       border-radius: 5px;
       border-width: 10px;
       border-color: red;
@@ -55,7 +56,7 @@
       top: 0;
       width: 100%;
       margin-bottom: 15px;
-      box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
     }
 
     .navbar a {
@@ -71,66 +72,383 @@
       background-color: #ddd;
       color: black;
     }
+
+
+    /* styles.css */
+    pre {
+      --sb-track-color: #2a3133;
+      --sb-thumb-color: #49494a;
+      --sb-size: 4px;
+
+      background-color: #131313;
+      color: #f8f8f2;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: scroll;
+      font-family: "Fira Code", monospace;
+      border-width: 2px;
+      border-color: #ddd;
+    }
+
+    pre::-webkit-scrollbar {
+      width: var(--sb-size);
+    }
+
+    pre::-webkit-scrollbar-track {
+      background: var(--sb-track-color);
+      border-radius: 2px;
+    }
+
+    pre::-webkit-scrollbar-thumb {
+      background: var(--sb-thumb-color);
+      border-radius: 2px;
+    }
+
+    @supports not selector(::-webkit-scrollbar) {
+      pre {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+      }
+    }
+
+    code {
+      font-size: 14px;
+      display: block;
+    }
+
+    /* Syntax highlighting */
+    .token.string {
+      color: #f1fa8c;
+    }
+
+    .token.builtin {
+      color: #8be9fd;
+    }
+
+    .token.operator,
+    .token.punctuation {
+      color: #ff79c6;
+    }
+
+    .token.keyword {
+      color: #ff79c6;
+    }
+
+    .token.number {
+      color: #bd93f9;
+    }
+
+    .token.comment {
+      color: #6272a4;
+    }
+
+    /* Add additional styles for language specific elements */
+    .token.function {
+      color: #50fa7b;
+    }
+
+    .token.variable {
+      color: #f8f8f2;
+    }
+
+    .token.class-name {
+      color: #ffb86c;
+    }
+
+    .token.selector {
+      color: #8be9fd;
+    }
+
+    .token.tag {
+      color: #ff79c6;
+    }
   </style>
 </head>
 
 <body>
-  <div class="navbar"><a href="#home" disabled>Home</a><a href="#about" disabled>About</a><a href="#posts" disabled>Posts</a><a href="#contact" disabled>Contact</a></div>
+  <div class="navbar"><a disabled>20 Percent Time Project</a></div>
   <div class="main">
     <div class="storyText">
       <h2 class="text chapter">James Foltz</h2>
-      <h2 class="text chapter">3rd times the charm</h2>
       <h2 class="text chapter">Google 20% Time Project</h2>
-      <p class="text">My project can be found at <a id="project-link" href="https://jamesfoltz.github.io/sand-sym/" target="_blank">jamesfoltz.github.io/sand-sym</a></p>
     </div>
     <div class="storyText">
       <div>
         <h1 class="text">Devlog: Sand Game Simulation - 2025 Feb 13</h1>
         <h2 class="text">Project Overview</h2>
-        <p class="text">I’ve implemented a basic rule-based voxel sand simulation. This has set the ground work for the full project.</p>
+        <p class="text">
+          I’ve implemented a basic rule-based voxel sand simulation. This has
+          set the ground work for the full project.
+        </p>
         <h2 class="text">Key Achievements</h2>
         <ol>
-          <li class="text">Created a simple but functional pixel sand simulation</li>
+          <li class="text">
+            Created a simple but functional pixel sand simulation
+          </li>
           <li class="text">Established project goals and structure</li>
-          <li class="text">Implemented basic rule set for sand behavior as well as a few other matierials</li>
+          <li class="text">
+            Implemented basic rule set for sand behavior as well as a few
+            other matierials
+          </li>
         </ol>
         <h2 class="text">Technical Learnings</h2>
         <ul>
-          <li class="text"><strong>Conflict Resolution</strong>: Found the importance of managing conflicts between cells.</li>
-          <li class="text"><strong>Rule-Based Systems</strong>: Gained insight on how the rule based aspect of my program should function.</li>
+          <li class="text">
+            <strong>Conflict Resolution</strong>: Found the importance of
+            managing conflicts between cells.
+          </li>
+          <li class="text">
+            <strong>Rule-Based Systems</strong>: Gained insight on how the
+            rule based aspect of my program should function.
+          </li>
         </ul>
         <h2 class="text">Challenges Encountered</h2>
         <ul>
-          <li class="text">Current implementation updates simulation cells one by one,causing imprecise logic, unexpected behaviors and artifacts.</li>
+          <li class="text">
+            Current implementation updates simulation cells one by one,causing
+            imprecise logic, unexpected behaviors and artifacts.
+          </li>
         </ul>
         <h2 class="text">Next Steps</h2>
         <ol>
           <li>
             <p class="text"><strong>User Interface Development</strong></p>
             <ul>
-              <li class="text"><input type="checkbox" disabled="" /> Design an intuitive UI for user interaction</li>
-              <li class="text"><input type="checkbox" disabled="" /> Implement basic controls(e.g., sand placement, clearing the simulation)</li>
+              <li class="text">
+                <input type="checkbox" disabled /> Design an intuitive UI
+                for user interaction
+              </li>
+              <li class="text">
+                <input type="checkbox" disabled /> Implement basic
+                controls(e.g., sand placement, clearing the simulation)
+              </li>
             </ul>
           </li>
           <li>
             <p class="text"><strong>Simulation Enhancement</strong></p>
             <ul>
-              <li class="text"><input type="checkbox" disabled="" /> Refine and expand therule set for more realistic sand behavior</li>
-              <li class="text"><input type="checkbox" disabled="" /> Implement simultaneous cell updates to improve simulation accuracy</li>
+              <li class="text">
+                <input type="checkbox" disabled /> Refine and expand
+                therule set for more realistic sand behavior
+              </li>
+              <li class="text">
+                <input type="checkbox" disabled /> Implement simultaneous
+                cell updates to improve simulation accuracy
+              </li>
             </ul>
           </li>
           <li>
             <p class="text"><strong>Code Refactoring</strong></p>
             <ul>
-              <li class="text"><input type="checkbox" disabled="" /> Restructure the update mechanism for parallel processing of cells</li>
-              <li class="text"><input type="checkbox" disabled="" /> Optimize performance for larger-scale simulations</li>
+              <li class="text">
+                <input type="checkbox" disabled /> Restructure the update
+                mechanism for parallel processing of cells
+              </li>
+              <li class="text">
+                <input type="checkbox" disabled /> Optimize performance for
+                larger-scale simulations
+              </li>
             </ul>
           </li>
         </ol>
         <h2 class="text">Reflections</h2>
-        <p class="text">This initial implementation has given me an idea of the scope ofthis project and potential places to improve, as well as problems I should expect to have in the future.</p>
+        <p class="text">
+          This initial implementation has given me an idea of the scope ofthis
+          project and potential places to improve, as well as problems I
+          should expect to have in the future.
+        </p>
         <hr />
       </div>
+    </div>
+    <div class="storyText">
+      <h1 id="wolfenstein-style-3d-renderer">
+        Wolfenstein-Style 3D Renderer
+      </h1>
+      <h2 id="overview">Overview</h2>
+      <p>
+        I’m currently working on a Wolfenstein-style 3D renderer. The basic
+        idea of this project is to make a pseudo-3D world by rendering a 2D
+        map using ray casting. This creates the illusion of depth by drawing
+        vertical lines of varying heights to represent walls, similar to how
+        classic first-person shooters like <em>Wolfenstein 3D</em> achieved
+        their visuals.
+      </p>
+      <h2 id="how-it-works">How It Works</h2>
+      <ol>
+        <li>
+          <strong>2D Grid-Based Map</strong>
+          <ul>
+            <li>
+              The world is represented as a grid of numbers and symbols, where
+              different values correspond to walls, empty spaces, or objects.
+            </li>
+            <li>this is what a map might look like</li>
+          </ul>
+        </li>
+      </ol>
+      <pre class="language-python"><code class="prism  language-python"><span class="token builtin">
+      map</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">"🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"</span><span class="token punctuation">,</span>
+        <span class="token string">"🟥▫️▫️🚪▫️▫️▫️☠️▫️🟥"</span><span class="token punctuation">,</span>
+        <span class="token string">"🟥▫️🟥🟥🟥🟥▫️▫️▫️🟥"</span><span class="token punctuation">,</span>
+        <span class="token string">"🟥▫️🟥▫️▫️🟥🟥▫️🟥🟥"</span><span class="token punctuation">,</span>
+        <span class="token string">"🟥▫️🟥🟥🚪🟥▫️🟥▫️🟥"</span><span class="token punctuation">,</span>
+        <span class="token string">"🟥▫️▫️▫️▫️🟥▫️🟥🟥🟥"</span><span class="token punctuation">,</span>
+        <span class="token string">"🟥▫️🟥🟥🟥🟥▫️🛡️🟥🟥"</span><span class="token punctuation">,</span>
+        <span class="token string">"🟥▫️▫️☠️▫️▫️▫️▫️🟥🟥"</span><span class="token punctuation">,</span>
+        <span class="token string">"🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"</span>
+    <span class="token punctuation">]</span>
+    
+    legend <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"🟥"</span><span class="token punctuation">:</span> <span class="token string">"wall"</span><span class="token punctuation">,</span>
+        <span class="token string">"🚪"</span><span class="token punctuation">:</span> <span class="token string">"door"</span><span class="token punctuation">,</span>
+        <span class="token string">"▫️"</span><span class="token punctuation">:</span> <span class="token string">"air"</span><span class="token punctuation">,</span> 
+        <span class="token string">"☠️"</span><span class="token punctuation">:</span> <span class="token string">"enemy"</span><span class="token punctuation">,</span>
+        <span class="token string">"🛡️"</span><span class="token punctuation">:</span> <span class="token string">"spawn"</span>
+    <span class="token punctuation">}</span>
+      </code></pre>
+      <ul>
+        <li>
+          The player moves within this grid, and their position, along with
+          their viewing angle, determines what they see.
+        </li>
+      </ul>
+      <ol start="2">
+        <li>
+          <p><strong>Ray Casting Technique</strong></p>
+          <ul>
+            <li>
+              Instead of rendering a full 3D environment, the code shoots out
+              <strong>rays</strong> from the player’s position in the
+              direction they are looking, one for each vertical column of
+              pixels on the screen.
+            </li>
+            <li>
+              Each ray moves forward until it hits a wall, calculating the
+              distance and angle to determine the correct wall height** and
+              eventualy <strong>texture slice</strong>.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Rendering the Scene</strong></p>
+          <ul>
+            <li>
+              The screen is drawn column by column, with
+              <strong>closer walls appearing taller</strong> and
+              <strong>farther walls appearing shorter</strong> to emulate
+              depth.
+            </li>
+            <li>
+              To hide math errors and improve the look, more distant walls are
+              faded out to create a fog effect.
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <h2 id="features-im-implementing">Features I’m Implementing</h2>
+      <ul>
+        <li class="task-list-item">
+          <input type="checkbox" class="task-list-item-checkbox" checked="true" disabled />
+          <strong>Smooth Player Movement &amp; Rotation</strong>
+        </li>
+        <li class="task-list-item">
+          <input type="checkbox" class="task-list-item-checkbox" checked="true" disabled />
+          <strong>Basic Collision Detection</strong>
+        </li>
+        <li class="task-list-item">
+          <input type="checkbox" class="task-list-item-checkbox" disabled />
+          <strong>Textured Walls</strong>
+        </li>
+      </ul>
+      <h2 id="goals--challenges">Goals &amp; Challenges</h2>
+      <ul>
+        <li>
+          The primary goal of this project is to build and understand the math
+          behind 3D to 2D projection.
+        </li>
+        <li>
+          The primary chalenge is the lack of information online about this
+          kind of stuff.
+        </li>
+      </ul>
+    </div>
+    <div class="storyText">
+      <h1 id="weak-perspective-projection">Weak perspective projection</h1>
+      <h2 id="overview">Overview</h2>
+      <p>As part of learning how games render 3d scenes, I have written a weak perspective projection 3d renderer. This
+        means that it uses simple math to approximate 3d to 2d point conversion.</p>
+      <h2 id="how-it-works">How It Works</h2>
+      <ol>
+        <li><strong>Model format</strong>
+          <ul>
+            <li>Each model is a list of polygons, each made up of lists of 3d points</li>
+            <li>this is what a model might look like</li>
+          </ul>
+        </li>
+      </ol>
+      <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> models <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token comment">// Cube</span>
+  <span class="token punctuation">[</span>
+    <span class="token comment">// Front face</span>
+    <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// Back face</span>
+    <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// Left face</span>
+    <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// Right face</span>
+    <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// Top face</span>
+    <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// Bottom face</span>
+    <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+      <ol start="2">
+        <li><strong>Point Conversion</strong>
+          <ul>
+            <li>Weak perspective point conversion works by dividing the x position and y position by the z position.
+              This isn’t very accurate, however, it creates a convincing effect and was used in many early 3d video
+              games such as the early builds of Quake and Doom.</li>
+          </ul>
+        </li>
+      </ol>
+      <h2 id="features-im-implementing">Features I’m Implementing</h2>
+      <ul>
+        <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled="">
+          <strong>Smooth animations</strong>
+        </li>
+        <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled="">
+          <strong>Handling Multiple Models</strong>
+        </li>
+        <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled="">
+          <strong>Basic Rotation</strong>
+        </li>
+        <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> <strong>UV
+            Mapping</strong></li>
+      </ul>
+      <h2 id="goals--challenges">Goals &amp; Challenges</h2>
+      <ul>
+        <li>The primary goal of this project is to build and understand the math behind 3D to 2D projection.</li>
+        <li>The primary challenge is the lack of information online about this kind of stuff.</li>
+      </ul>
+    </div>
+    <div class="storyText">
+      <h1>Weak perspective projection Bug Fixes</h1>
+      <p>No significant progress was made. Minor bug fixes and cleaning up code. The code can now handle much more shapes.</p>
+      <p>For my next project, I plan on making a basic new tab page with a computer terminal interface. the commands will do stuff from getting the weather to searching for different Pokemon and, of course, searching the internet. I am hoping to publish it as an extension on Google if it's not too difficult. The point of this it to get better at using API's.</p>
     </div>
   </div>
 </body>
