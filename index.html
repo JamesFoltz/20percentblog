@@ -462,51 +462,52 @@
         <li>keyboard.js, used to add more key interaction utility, allowing for more complex keyboard inputs</li>
       </ul>
     </div>
-  </div>
-  <div class="storyText"><h1 id="periodic-table-search-tool">Periodic Table Search Tool</h1>
-    <p>I made a <a href="https://jamesfoltz.github.io/periodicSearch/">website</a> that makes it easy to find and get info on the elements on the periodic table.</p>
-    <h3 id="why-though">Why though?</h3>
-    <p>It helped me to learn more about data parsing. It takes a list of the elements and information on them converts them into a more human readable form. It also makes it less of a hassle to get information on the elements when doing calculations for chemistry.</p>
-    <h3 id="how-does-it-work">How does it work?</h3>
-    <p>It take unformated <abbr title="JavaScript Object Notation">JSON</abbr> like below and converts it into a javascript object from which the selected pieces of information are input into a table, added to a div and, if it matches the search query, added to the <abbr title="Document Object Model">DOM</abbr>.</p>
-    <pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
-        <span class="token string">"elements"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-            <span class="token punctuation">{</span>
-                <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Hydrogen"</span><span class="token punctuation">,</span>
-                <span class="token string">"appearance"</span><span class="token punctuation">:</span> <span class="token string">"colorless gas"</span><span class="token punctuation">,</span>
-                <span class="token string">"atomic_mass"</span><span class="token punctuation">:</span> <span class="token number">1.008</span><span class="token punctuation">,</span>
-                <span class="token string">"boil"</span><span class="token punctuation">:</span> <span class="token number">20.271</span><span class="token punctuation">,</span>
-                <span class="token string">"category"</span><span class="token punctuation">:</span> <span class="token string">"diatomic nonmetal"</span><span class="token punctuation">,</span>
-                <span class="token string">"density"</span><span class="token punctuation">:</span> <span class="token number">0.08988</span><span class="token punctuation">,</span>
-                <span class="token string">"discovered_by"</span><span class="token punctuation">:</span> <span class="token string">"Henry Cavendish"</span><span class="token punctuation">,</span>
-                <span class="token string">"melt"</span><span class="token punctuation">:</span> <span class="token number">13.99</span><span class="token punctuation">,</span>
-                <span class="token string">"molar_heat"</span><span class="token punctuation">:</span> <span class="token number">28.836</span><span class="token punctuation">,</span>
-                <span class="token string">"named_by"</span><span class="token punctuation">:</span> <span class="token string">"Antoine Lavoisier"</span><span class="token punctuation">,</span>
-                <span class="token string">"number"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-                <span class="token string">"period"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-                <span class="token string">"group"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-                <span class="token string">"phase"</span><span class="token punctuation">:</span> <span class="token string">"Gas"</span><span class="token punctuation">,</span>
-                <span class="token string">"source"</span><span class="token punctuation">:</span> <span class="token string">"https://en.wikipedia.org/wiki/Hydrogen"</span><span class="token punctuation">,</span>
-                <span class="token string">"bohr_model_image"</span><span class="token punctuation">:</span> <span class="token string">"https://storage.googleapis.com/search-ar-edu/periodic-table/element_001_hydrogen/element_001_hydrogen_srp_th.png"</span><span class="token punctuation">,</span>
-                <span class="token string">"bohr_model_3d"</span><span class="token punctuation">:</span> <span class="token string">"https://storage.googleapis.com/search-ar-edu/periodic-table/element_001_hydrogen/element_001_hydrogen.glb"</span><span class="token punctuation">,</span>
-                <span class="token string">"spectral_img"</span><span class="token punctuation">:</span> <span class="token string">"https://en.wikipedia.org/wiki/File:Hydrogen_Spectra.jpg"</span><span class="token punctuation">,</span>
-                <span class="token string">"summary"</span><span class="token punctuation">:</span> <span class="token string">"Hydrogen is a chemical element with chemical symbol H and atomic number 1. With an atomic weight of 1.00794 u, hydrogen is the lightest element on the periodic table. Its monatomic form (H) is the most abundant chemical substance in the Universe, constituting roughly 75% of all baryonic mass."</span><span class="token punctuation">,</span>
-                <span class="token string">"symbol"</span><span class="token punctuation">:</span> <span class="token string">"H"</span><span class="token punctuation">,</span>
-                <span class="token operator">...</span>
-                <span class="token string">"cpk-hex"</span><span class="token punctuation">:</span> <span class="token string">"ffffff"</span><span class="token punctuation">,</span>
-                <span class="token string">"image"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-                    <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Vial of glowing ultrapure hydrogen, H2. Original size in cm: 1 x 5"</span><span class="token punctuation">,</span>
-                    <span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"https://upload.wikimedia.org/wikipedia/commons/d/d9/Hydrogenglow.jpg"</span><span class="token punctuation">,</span>
-                    <span class="token string">"attribution"</span><span class="token punctuation">:</span> <span class="token string">"User:Jurii, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wikimedia Commons, source: https://images-of-elements.com/hydrogen.php"</span>
-                <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                <span class="token string">"block"</span><span class="token punctuation">:</span> <span class="token string">"s"</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token operator">...</span>
-      <span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
-    </code></pre>
-    <p>This much data takes up a lot of space, meaning that it takes a while to scroll through the elements, and I wanted to fix that. rather than just hiding all the information until you click on the element, instead, at the top of the page there is an array of toggles to show or hide different pieces of information. This means if you only need the state of matter, you can make it only show the phase of the element.</p>
+    <div class="storyText">
+      <h1 id="periodic-table-search-tool">Periodic Table Search Tool</h1>
+      <p>I made a <a href="https://jamesfoltz.github.io/periodicSearch/">website</a> that makes it easy to find and get info on the elements on the periodic table.</p>
+      <h3 id="why-though">Why though?</h3>
+      <p>It helped me to learn more about data parsing. It takes a list of the elements and information on them converts them into a more human readable form. It also makes it less of a hassle to get information on the elements when doing calculations for chemistry.</p>
+      <h3 id="how-does-it-work">How does it work?</h3>
+      <p>It take unformated <abbr title="JavaScript Object Notation">JSON</abbr> like below and converts it into a javascript object from which the selected pieces of information are input into a table, added to a div and, if it matches the search query, added to the <abbr title="Document Object Model">DOM</abbr>.</p>
+      <pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+          <span class="token string">"elements"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                  <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Hydrogen"</span><span class="token punctuation">,</span>
+                  <span class="token string">"appearance"</span><span class="token punctuation">:</span> <span class="token string">"colorless gas"</span><span class="token punctuation">,</span>
+                  <span class="token string">"atomic_mass"</span><span class="token punctuation">:</span> <span class="token number">1.008</span><span class="token punctuation">,</span>
+                  <span class="token string">"boil"</span><span class="token punctuation">:</span> <span class="token number">20.271</span><span class="token punctuation">,</span>
+                  <span class="token string">"category"</span><span class="token punctuation">:</span> <span class="token string">"diatomic nonmetal"</span><span class="token punctuation">,</span>
+                  <span class="token string">"density"</span><span class="token punctuation">:</span> <span class="token number">0.08988</span><span class="token punctuation">,</span>
+                  <span class="token string">"discovered_by"</span><span class="token punctuation">:</span> <span class="token string">"Henry Cavendish"</span><span class="token punctuation">,</span>
+                  <span class="token string">"melt"</span><span class="token punctuation">:</span> <span class="token number">13.99</span><span class="token punctuation">,</span>
+                  <span class="token string">"molar_heat"</span><span class="token punctuation">:</span> <span class="token number">28.836</span><span class="token punctuation">,</span>
+                  <span class="token string">"named_by"</span><span class="token punctuation">:</span> <span class="token string">"Antoine Lavoisier"</span><span class="token punctuation">,</span>
+                  <span class="token string">"number"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                  <span class="token string">"period"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                  <span class="token string">"group"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                  <span class="token string">"phase"</span><span class="token punctuation">:</span> <span class="token string">"Gas"</span><span class="token punctuation">,</span>
+                  <span class="token string">"source"</span><span class="token punctuation">:</span> <span class="token string">"https://en.wikipedia.org/wiki/Hydrogen"</span><span class="token punctuation">,</span>
+                  <span class="token string">"bohr_model_image"</span><span class="token punctuation">:</span> <span class="token string">"https://storage.googleapis.com/search-ar-edu/periodic-table/element_001_hydrogen/element_001_hydrogen_srp_th.png"</span><span class="token punctuation">,</span>
+                  <span class="token string">"bohr_model_3d"</span><span class="token punctuation">:</span> <span class="token string">"https://storage.googleapis.com/search-ar-edu/periodic-table/element_001_hydrogen/element_001_hydrogen.glb"</span><span class="token punctuation">,</span>
+                  <span class="token string">"spectral_img"</span><span class="token punctuation">:</span> <span class="token string">"https://en.wikipedia.org/wiki/File:Hydrogen_Spectra.jpg"</span><span class="token punctuation">,</span>
+                  <span class="token string">"summary"</span><span class="token punctuation">:</span> <span class="token string">"Hydrogen is a chemical element with chemical symbol H and atomic number 1. With an atomic weight of 1.00794 u, hydrogen is the lightest element on the periodic table. Its monatomic form (H) is the most abundant chemical substance in the Universe, constituting roughly 75% of all baryonic mass."</span><span class="token punctuation">,</span>
+                  <span class="token string">"symbol"</span><span class="token punctuation">:</span> <span class="token string">"H"</span><span class="token punctuation">,</span>
+                  <span class="token operator">...</span>
+                  <span class="token string">"cpk-hex"</span><span class="token punctuation">:</span> <span class="token string">"ffffff"</span><span class="token punctuation">,</span>
+                  <span class="token string">"image"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                      <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Vial of glowing ultrapure hydrogen, H2. Original size in cm: 1 x 5"</span><span class="token punctuation">,</span>
+                      <span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"https://upload.wikimedia.org/wikipedia/commons/d/d9/Hydrogenglow.jpg"</span><span class="token punctuation">,</span>
+                      <span class="token string">"attribution"</span><span class="token punctuation">:</span> <span class="token string">"User:Jurii, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wikimedia Commons, source: https://images-of-elements.com/hydrogen.php"</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token string">"block"</span><span class="token punctuation">:</span> <span class="token string">"s"</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token operator">...</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+      </code></pre>
+      <p>This much data takes up a lot of space, meaning that it takes a while to scroll through the elements, and I wanted to fix that. rather than just hiding all the information until you click on the element, instead, at the top of the page there is an array of toggles to show or hide different pieces of information. This means if you only need the state of matter, you can make it only show the phase of the element.</p>
     </div>
+  </div>
 </body>
 
 </html>
