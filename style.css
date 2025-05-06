@@ -1,0 +1,155 @@
+#project-link:visited {
+  color: #00dddd;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #212121;
+  color: rgb(187, 168, 135);
+  font-size: large;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.storyText {
+  width: min(90%, 80ch);
+  --offsetx: 8px;
+  --offsety: 8px;
+  --blur-rad: 5px;
+  --spread: -2px;
+  margin-bottom: 15px;
+  background-color: #333;
+  box-shadow: var(--offsetx) var(--offsety) var(--blur-rad) var(--spread) rgba(0, 0, 0, 0.39);
+  padding: 5%;
+  border-radius: 7px;
+}
+
+.text:hover {
+  background-color: rgba(83, 83, 83, 0.25);
+  border-radius: 5px;
+  border-width: 10px;
+  border-color: red;
+  color: hsl(38, 27.7, 80);
+}
+
+/* New styles for the navigation bar */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  margin-bottom: 15px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: rgb(187, 168, 135);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/* styles.css */
+pre {
+  --sb-track-color: #2a3133;
+  --sb-thumb-color: #49494a;
+  --sb-size: 4px;
+
+  background-color: #131313;
+  color: #f8f8f2;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: scroll;
+  font-family: "Fira Code", monospace;
+  border-width: 2px;
+  border-color: #ddd;
+}
+
+pre::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+pre::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 2px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 2px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  pre {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+code {
+  font-size: 14px;
+  display: block;
+}
+
+/* Syntax highlighting */
+.token.string {
+  color: #f1fa8c;
+}
+
+.token.builtin {
+  color: #8be9fd;
+}
+
+.token.operator,
+.token.punctuation {
+  color: #ff79c6;
+}
+
+.token.keyword {
+  color: #ff79c6;
+}
+
+.token.number {
+  color: #bd93f9;
+}
+
+.token.comment {
+  color: #6272a4;
+}
+
+/* Add additional styles for language specific elements */
+.token.function {
+  color: #50fa7b;
+}
+
+.token.variable {
+  color: #f8f8f2;
+}
+
+.token.class-name {
+  color: #ffb86c;
+}
+
+.token.selector {
+  color: #8be9fd;
+}
+
+.token.tag {
+  color: #ff79c6;
+}

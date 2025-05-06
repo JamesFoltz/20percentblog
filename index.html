@@ -5,163 +5,7 @@
   <meta charset="UTF-8" />
   <meta content="width=device-width,initial-scale=1" name="viewport" />
   <title>20% project blog</title>
-  <style>
-    #project-link:visited {
-      color: #00dddd;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      background-color: #212121;
-      color: rgb(187, 168, 135);
-      font-size: large;
-    }
-
-    .main {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .storyText {
-      width: min(90%, 80ch);
-      --offsetx: 8px;
-      --offsety: 8px;
-      --blur-rad: 5px;
-      --spread: -2px;
-      margin-bottom: 15px;
-      background-color: #333;
-      box-shadow: var(--offsetx) var(--offsety) var(--blur-rad) var(--spread) rgba(0, 0, 0, 0.39);
-      padding: 5%;
-      border-radius: 7px;
-    }
-
-    .text:hover {
-      background-color: rgba(83, 83, 83, 0.25);
-      border-radius: 5px;
-      border-width: 10px;
-      border-color: red;
-      color: hsl(38, 27.7, 80);
-    }
-
-    /* New styles for the navigation bar */
-    .navbar {
-      background-color: #333;
-      overflow: hidden;
-      position: sticky;
-      top: 0;
-      width: 100%;
-      margin-bottom: 15px;
-      box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    }
-
-    .navbar a {
-      float: left;
-      display: block;
-      color: rgb(187, 168, 135);
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    .navbar a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-
-    /* styles.css */
-    pre {
-      --sb-track-color: #2a3133;
-      --sb-thumb-color: #49494a;
-      --sb-size: 4px;
-
-      background-color: #131313;
-      color: #f8f8f2;
-      padding: 16px;
-      border-radius: 8px;
-      overflow-x: scroll;
-      font-family: "Fira Code", monospace;
-      border-width: 2px;
-      border-color: #ddd;
-    }
-
-    pre::-webkit-scrollbar {
-      width: var(--sb-size);
-    }
-
-    pre::-webkit-scrollbar-track {
-      background: var(--sb-track-color);
-      border-radius: 2px;
-    }
-
-    pre::-webkit-scrollbar-thumb {
-      background: var(--sb-thumb-color);
-      border-radius: 2px;
-    }
-
-    @supports not selector(::-webkit-scrollbar) {
-      pre {
-        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-      }
-    }
-
-    code {
-      font-size: 14px;
-      display: block;
-    }
-
-    /* Syntax highlighting */
-    .token.string {
-      color: #f1fa8c;
-    }
-
-    .token.builtin {
-      color: #8be9fd;
-    }
-
-    .token.operator,
-    .token.punctuation {
-      color: #ff79c6;
-    }
-
-    .token.keyword {
-      color: #ff79c6;
-    }
-
-    .token.number {
-      color: #bd93f9;
-    }
-
-    .token.comment {
-      color: #6272a4;
-    }
-
-    /* Add additional styles for language specific elements */
-    .token.function {
-      color: #50fa7b;
-    }
-
-    .token.variable {
-      color: #f8f8f2;
-    }
-
-    .token.class-name {
-      color: #ffb86c;
-    }
-
-    .token.selector {
-      color: #8be9fd;
-    }
-
-    .token.tag {
-      color: #ff79c6;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -507,6 +351,91 @@
       </code></pre>
       <p>This much data takes up a lot of space, meaning that it takes a while to scroll through the elements, and I wanted to fix that. rather than just hiding all the information until you click on the element, instead, at the top of the page there is an array of toggles to show or hide different pieces of information. This means if you only need the state of matter, you can make it only show the phase of the element.</p>
     </div>
+    <div class="storyText"><h1>Terminal asthetic with CSS</h1>
+      <p>I made a website that mimics the look of a retro computer terminal using CSS.</p>
+      <h3>Why though?</h3>
+      <p>It helped me learn about advanced CSS styling such as complexly aranging elements on the screen, animations, and advanced uses of text-shadows and box-shadows. One of my favorite pieces of styling was the screen flicker, chromatic aberation and fake sub-pixels, all used to emulate the look of old crt displays.</p>
+      <pre class=" language-css"><code><span class="token atrule"><span class="token rule">@keyframes</span> flicker</span> <span class="token punctuation">{</span>
+        <span class="token selector">0% </span><span class="token punctuation">{</span>
+          <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0.27861</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      
+        <span class="token selector">5% </span><span class="token punctuation">{</span>
+          <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0.34769</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector"><span class="token class">...</span>
+        95% </span><span class="token punctuation">{</span>
+          <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0.36108</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      
+        <span class="token selector">100% </span><span class="token punctuation">{</span>
+          <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0.24387</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      
+      <span class="token atrule"><span class="token rule">@keyframes</span> chromaticAberration</span> <span class="token punctuation">{</span>
+        <span class="token selector">0% </span><span class="token punctuation">{</span>
+          <span class="token property">text-shadow</span><span class="token punctuation">:</span> <span class="token number">0.4389924193300864</span>px <span class="token number">0</span> <span class="token number">1</span>px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">30</span>, <span class="token number">255</span>, <span class="token number">0.5</span><span class="token punctuation">)</span>,
+            -<span class="token number">0.4389924193300864</span>px <span class="token number">0</span> <span class="token number">1</span>px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span>, <span class="token number">0</span>, <span class="token number">80</span>, <span class="token number">0.3</span><span class="token punctuation">)</span>, <span class="token number">0</span> <span class="token number">0</span> <span class="token number">3</span>px<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      
+        <span class="token selector">5% </span><span class="token punctuation">{</span>
+          <span class="token property">text-shadow</span><span class="token punctuation">:</span> <span class="token number">2.7928974010788217</span>px <span class="token number">0</span> <span class="token number">1</span>px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">30</span>, <span class="token number">255</span>, <span class="token number">0.5</span><span class="token punctuation">)</span>,
+            -<span class="token number">2.7928974010788217</span>px <span class="token number">0</span> <span class="token number">1</span>px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span>, <span class="token number">0</span>, <span class="token number">80</span>, <span class="token number">0.3</span><span class="token punctuation">)</span>, <span class="token number">0</span> <span class="token number">0</span> <span class="token number">3</span>px<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector"><span class="token class">...</span>
+        95% </span><span class="token punctuation">{</span>
+          <span class="token property">text-shadow</span><span class="token punctuation">:</span> <span class="token number">2.1841838852799786</span>px <span class="token number">0</span> <span class="token number">1</span>px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">30</span>, <span class="token number">255</span>, <span class="token number">0.5</span><span class="token punctuation">)</span>,
+            -<span class="token number">2.1841838852799786</span>px <span class="token number">0</span> <span class="token number">1</span>px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span>, <span class="token number">0</span>, <span class="token number">80</span>, <span class="token number">0.3</span><span class="token punctuation">)</span>, <span class="token number">0</span> <span class="token number">0</span> <span class="token number">3</span>px<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      
+        <span class="token selector">100% </span><span class="token punctuation">{</span>
+          <span class="token property">text-shadow</span><span class="token punctuation">:</span> <span class="token number">2.6208764473832513</span>px <span class="token number">0</span> <span class="token number">1</span>px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">30</span>, <span class="token number">255</span>, <span class="token number">0.5</span><span class="token punctuation">)</span>,
+            -<span class="token number">2.6208764473832513</span>px <span class="token number">0</span> <span class="token number">1</span>px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span>, <span class="token number">0</span>, <span class="token number">80</span>, <span class="token number">0.3</span><span class="token punctuation">)</span>, <span class="token number">0</span> <span class="token number">0</span> <span class="token number">3</span>px<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      
+      <span class="token selector"><span class="token class">.crt</span><span class="token pseudo-element">::after</span> </span><span class="token punctuation">{</span>
+        <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">bottom</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">18</span>, <span class="token number">16</span>, <span class="token number">16</span>, <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+        <span class="token property">animation</span><span class="token punctuation">:</span> flicker <span class="token number">0.15</span>s infinite<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      
+      <span class="token selector"><span class="token class">.crt</span><span class="token pseudo-element">::before</span> </span><span class="token punctuation">{</span>
+        <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">bottom</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">18</span>, <span class="token number">16</span>, <span class="token number">16</span>, <span class="token number">0</span><span class="token punctuation">)</span> <span class="token number">50%</span>, <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.25</span><span class="token punctuation">)</span> <span class="token number">50%</span><span class="token punctuation">)</span>,
+          <span class="token function">linear-gradient</span><span class="token punctuation">(</span>
+            <span class="token number">90</span>deg,
+            <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.06</span><span class="token punctuation">)</span>,
+            <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">255</span>, <span class="token number">0</span>, <span class="token number">0.02</span><span class="token punctuation">)</span>,
+            <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">255</span>, <span class="token number">0.06</span><span class="token punctuation">)</span>
+          <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token property">background-size</span><span class="token punctuation">:</span> <span class="token number">100%</span> <span class="token number">2</span>px, <span class="token number">3</span>px <span class="token number">100%</span><span class="token punctuation">;</span>
+        <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      
+      <span class="token selector"><span class="token class">.crt</span> </span><span class="token punctuation">{</span>
+        <span class="token property">animation</span><span class="token punctuation">:</span> chromaticAberration <span class="token number">1.6</span>s infinite<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      </code></pre>
+      <p>This project was a very fun challenge because I dont do a lot of artistic styling, and tend to make more functional projects. I stepped outside my comfort zone and found something that I now enjoy instead of dread.</p>
+      </div>
   </div>
 </body>
 
