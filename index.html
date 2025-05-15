@@ -353,11 +353,11 @@
     </div>
     <div class="storyText crt">
       <div class="crt">
-      <h1>Terminal asthetic with CSS</h1>
-      <p>I made a website that mimics the look of a retro computer terminal using CSS.</p>
-      <h3>Why though?</h3>
-      <p>It helped me learn about advanced CSS styling such as complexly aranging elements on the screen, animations, and advanced uses of text-shadows and box-shadows. One of my favorite pieces of styling was the screen flicker, chromatic aberation and fake sub-pixels, all used to emulate the look of old crt displays.</p>
-      <pre class=" language-css"><code><span class="token atrule"><span class="token rule">@keyframes</span> flicker</span> <span class="token punctuation">{</span>
+        <h1>Terminal asthetic with CSS</h1>
+        <p>I made a website that mimics the look of a retro computer terminal using CSS.</p>
+        <h3>Why though?</h3>
+        <p>It helped me learn about advanced CSS styling such as complexly aranging elements on the screen, animations, and advanced uses of text-shadows and box-shadows. One of my favorite pieces of styling was the screen flicker, chromatic aberation and fake sub-pixels, all used to emulate the look of old crt displays.</p>
+        <pre class=" language-css"><code><span class="token atrule"><span class="token rule">@keyframes</span> flicker</span> <span class="token punctuation">{</span>
         <span class="token selector">0% </span><span class="token punctuation">{</span>
           <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0.27861</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
@@ -436,8 +436,151 @@
         <span class="token property">animation</span><span class="token punctuation">:</span> chromaticAberration <span class="token number">1.6</span>s infinite<span class="token punctuation">;</span>
       <span class="token punctuation">}</span>
       </code></pre>
-      <p>This project was a very fun challenge because I dont do a lot of artistic styling, and tend to make more functional projects. I stepped outside my comfort zone and found something that I now enjoy instead of dread.</p>
+        <p>This project was a very fun challenge because I dont do a lot of artistic styling, and tend to make more functional projects. I stepped outside my comfort zone and found something that I now enjoy instead of dread.</p>
       </div>
+    </div>
+    <div class="storyText">
+      <h1 id="conways-game-of-lifewith-a-twist">Conways game of life(with a twist)</h1>
+      <p>I made my own <a href="https://jamesfoltz.github.io/conwaysPlayground/">version</a> of Conways game of Life, which i will be refering to as <abbr title="Conways Game of Life">CGL</abbr> for brevity. For those who dont know, <abbr title="Conways Game of Life">CGL</abbr> is an elementary <a href="https://en.wikipedia.org/wiki/Cellular_automaton">Cellular Automata</a> invented by John Conway in March of 1970. It has four basic rules, which are as follows:</p>
+      <blockquote>
+        <ol>
+          <li>Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.</li>
+          <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+          <li>Any live cell with more than three live neighbours dies, as if by overpopulation.</li>
+          <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+        </ol>
+      </blockquote>
+      <p>(<a href="https://en.wikipedia.org/wiki/Cellular_automaton#:~:text=Any%20live%20cell%20with%20fewer%20than%20two%20live%20neighbours%20dies%2C%20as%20if%20caused%20by%20underpopulation.">From Wikipedia</a>)</p>
+      <p>I, however, added a twist. you can add your own rules and states.</p>
+      <h3 id="why-though">Why though?</h3>
+      <p>This was simaler to my original idea for this project, just simpler. I also got better at data parsing and displaying complex data.</p>
+      <h3 id="hows-it-work">How’s it work?</h3>
+      <p>On a regular(configureable) interval, the code loops through every cell, counts its neibors, and converts cells based on the state of the cell then writing it to a new array. then the new array it looped through ane each item it written to its place on the screen.</p>
+      <h3 id="config">Config</h3>
+      <p>The config looks confusing, however, its actualy rather simple. Heres an example I made:</p>
+      <pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+ <span class="token string">"colors"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">//This defines all the states and thier colors</span>
+  <span class="token string">"dead"</span><span class="token punctuation">:</span> <span class="token string">"#222222"</span><span class="token punctuation">,</span>
+  <span class="token string">"alive"</span><span class="token punctuation">:</span> <span class="token string">"#00ff88"</span><span class="token punctuation">,</span>
+  <span class="token string">"cat"</span><span class="token punctuation">:</span> <span class="token string">"#0099ff"</span><span class="token punctuation">,</span>
+  <span class="token string">"zombie"</span><span class="token punctuation">:</span> <span class="token string">"#ff0055"</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token string">"rules"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">"dead"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token comment">//This says that is it the rule set to be applied to cells with the dead state</span>
+   <span class="token punctuation">{</span>
+    <span class="token string">"next"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">,</span><span class="token comment">//this says that if all of the folowing conditions are met, the cell will become alive</span>
+    <span class="token string">"conditions"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+     <span class="token punctuation">{</span>
+      <span class="token string">"state"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">,</span><span class="token comment">//this checks if the cell has any number of alive listed in count</span>
+      <span class="token string">"count"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token comment">//this condition is met if there are 3 alive cells</span>
+       <span class="token number">3</span>
+      <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+    <span class="token string">"next"</span><span class="token punctuation">:</span> <span class="token string">"cat"</span><span class="token punctuation">,</span>
+    <span class="token string">"conditions"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+     <span class="token punctuation">{</span>
+      <span class="token string">"state"</span><span class="token punctuation">:</span> <span class="token string">"cat"</span><span class="token punctuation">,</span>
+      <span class="token string">"count"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+       <span class="token number">2</span><span class="token punctuation">,</span>
+       <span class="token number">3</span>
+      <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"alive"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+   <span class="token punctuation">{</span>
+    <span class="token string">"next"</span><span class="token punctuation">:</span> <span class="token string">"dead"</span><span class="token punctuation">,</span>
+    <span class="token string">"conditions"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+     <span class="token punctuation">{</span>
+      <span class="token string">"state"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">,</span>
+      <span class="token string">"count"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+       <span class="token number">0</span><span class="token punctuation">,</span>
+       <span class="token number">1</span><span class="token punctuation">,</span>
+       <span class="token number">4</span><span class="token punctuation">,</span>
+       <span class="token number">5</span><span class="token punctuation">,</span>
+       <span class="token number">6</span><span class="token punctuation">,</span>
+       <span class="token number">7</span><span class="token punctuation">,</span>
+       <span class="token number">8</span>
+      <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+    <span class="token string">"next"</span><span class="token punctuation">:</span> <span class="token string">"zombie"</span><span class="token punctuation">,</span>
+    <span class="token string">"conditions"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+     <span class="token punctuation">{</span>
+      <span class="token string">"state"</span><span class="token punctuation">:</span> <span class="token string">"zombie"</span><span class="token punctuation">,</span>
+      <span class="token string">"count"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+       <span class="token number">1</span><span class="token punctuation">,</span>
+       <span class="token number">2</span>
+      <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"cat"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+   <span class="token punctuation">{</span>
+    <span class="token string">"next"</span><span class="token punctuation">:</span> <span class="token string">"dead"</span><span class="token punctuation">,</span>
+    <span class="token string">"conditions"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+     <span class="token punctuation">{</span>
+      <span class="token string">"state"</span><span class="token punctuation">:</span> <span class="token string">"cat"</span><span class="token punctuation">,</span>
+      <span class="token string">"count"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+       <span class="token number">0</span><span class="token punctuation">,</span>
+       <span class="token number">1</span><span class="token punctuation">,</span>
+       <span class="token number">7</span><span class="token punctuation">,</span>
+       <span class="token number">8</span>
+      <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+    <span class="token string">"next"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">,</span>
+    <span class="token string">"conditions"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+     <span class="token punctuation">{</span>
+      <span class="token string">"state"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">,</span>
+      <span class="token string">"count"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+       <span class="token number">2</span><span class="token punctuation">,</span>
+       <span class="token number">3</span>
+      <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"zombie"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+   <span class="token punctuation">{</span>
+    <span class="token string">"next"</span><span class="token punctuation">:</span> <span class="token string">"dead"</span><span class="token punctuation">,</span>
+    <span class="token string">"conditions"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+     <span class="token punctuation">{</span>
+      <span class="token string">"state"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">,</span>
+      <span class="token string">"count"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+       <span class="token number">0</span>
+      <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+    <span class="token string">"next"</span><span class="token punctuation">:</span> <span class="token string">"zombie"</span><span class="token punctuation">,</span>
+    <span class="token string">"conditions"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+     <span class="token punctuation">{</span>
+      <span class="token string">"state"</span><span class="token punctuation">:</span> <span class="token string">"zombie"</span><span class="token punctuation">,</span>
+      <span class="token string">"count"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+       <span class="token number">2</span><span class="token punctuation">,</span>
+       <span class="token number">3</span><span class="token punctuation">,</span>
+       <span class="token number">4</span>
+      <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+
     </div>
   </div>
 </body>
