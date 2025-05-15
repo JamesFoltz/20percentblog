@@ -326,6 +326,10 @@ code {
     }
 }
 
+a{
+    color:#00dddd;
+}
+
 .crt::after {
     content: " ";
     display: block;
